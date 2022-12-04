@@ -54,11 +54,12 @@ this.getAnnonces()
       this.tabIdAnnonces.splice(index, 1); // 2nd parameter means remove one item only
     }
     this.RhService.updateRh(this.idRh,{annonces:this.tabIdAnnonces}).subscribe((n)=>{
-      this.token.saveUser(n)
+      this.token.saveUser(n);
+      this.AnnonceService.supprimerAnnonce(id).subscribe((n)=>{
+        window.location.reload();
+      });
     });
-    this.AnnonceService.supprimerAnnonce(id).subscribe((n)=>{
-      window.location.reload();
-    });
+   
   }
 
 
