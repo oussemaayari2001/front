@@ -1,0 +1,83 @@
+<div class="page-wrapper bg-dark p-t-100 p-b-50">
+    <div class="wrapper wrapper--w900">
+      <div class="card card-6">
+        <div class="card-heading">
+          <h2 class="title">Modifier annonce</h2>
+        </div>
+    
+        <div class="card-body">
+          <form #form="ngForm">
+            <div class="form-row">
+              <div class="name">Titre</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="titre"  [(ngModel)]="annonce.titre">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="name">Postes disponibles</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="poste" 
+                  [(ngModel)]="annonce.poste">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="name">Type d'emploi désiré</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="type" 
+                  [(ngModel)]="annonce.type_emploi">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Experience</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="experience" 
+                  [(ngModel)]="annonce.experience">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Niveau d'étude</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="niveau"
+                  [(ngModel)]="annonce.niveau">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Langue</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="langue"
+                  [(ngModel)]="annonce.langue">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Description de l'emploi</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="nom"   [(ngModel)]="annonce.description">
+              </div>
+            </div>
+            
+
+            <div class="form-row">
+              <div class="name">Mots clés
+              </div>
+              <div class="value">
+                <div class="input-group">
+                  <input class="input--style-6" type="text" name="mots_cles" [(ngModel)]="annonce.mots_cles">
+                </div>
+              </div>
+              </div>
+  
+          </form>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn--radius-2 btn--blue-2" (click)="update()">modifier</button>
+        </div>
+        <div class="alert alert-success" *ngIf="updated">
+          Annonce updated 
+        </div>
+      </div>
+    </div>
+  </div>

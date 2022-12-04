@@ -1,0 +1,65 @@
+
+<div class="page-wrapper bg-dark p-t-100 p-b-50">
+    <div class="wrapper wrapper--w900">
+      <div class="card card-6">
+        <div class="card-heading">
+          <h2 class="title">Gérer mon compte</h2>
+        </div>
+        <div class="card-body">
+          <form #form="ngForm">
+            <div class="form-row">
+              <div class="name">Nom société</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="nom_societe"  [(ngModel)]="compte.nom">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="name">Adresse Email</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="adressEmail" placeholder="ressourcehumaine@gmail.com"
+                  [(ngModel)]="compte.email">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Domaine métier</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="domaine_metier" placeholder="informatique"
+                  [(ngModel)]="compte.domaineMetier">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Adresse</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="adresse" placeholder="Rue Marseille, Tunis..."
+                  [(ngModel)]="compte.adresse">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Téléphone</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="tel" placeholder="min 6 caractères"
+                  [(ngModel)]="compte.tel">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="name">Mot de passe</div>
+              <div class="value">
+                <input class="input--style-6" type="text" name="password" placeholder=""
+                  [(ngModel)]="compte.password">
+              </div>
+            </div>  
+          </form>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn--radius-2 btn--blue-2" (click)="modifierCompte()">Enregistrer</button>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn--radius-2 btn--blue-2" (click)="supprimerCompte()">Désactiver mon compte</button>
+        </div>
+      </div>
+    </div>
+  </div>

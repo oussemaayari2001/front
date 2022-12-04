@@ -1,0 +1,71 @@
+<section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+             
+              <div class="col-xl-15">
+                <div class="card-body p-md-5 text-black">
+                
+  
+                  <div class="container">
+                    <h1>Mon compte</h1>
+                    <table class="table">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="col">
+                                    <img src="../assets/profielfoto.png" width="60"/>
+                                </th>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <th scope="col">Nom société</th>
+                                <td>{{compte.nom}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="col">Adresse Email</th>
+                                <td>{{compte.email}}</td>
+                           </tr>
+                            <tr>
+                                <th scope="col">Domaine métier</th> 
+                                <td>{{compte.domaine_metier}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="col">Adresse</th>
+                                <td>{{compte.adresse}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="col">Téléphone</th>
+                                <td>{{compte.tel}}</td>
+                            </tr>
+                            <tr>
+                                <th scope="col">Mot de passe</th>
+                                <td>{{compte.password}}</td>
+                            </tr>
+
+                           <button class="btn btn-warning"><a [routerLink]="['/modifier',idrh]" > Détail</a></button> 
+
+                        </tbody>                
+                </table>
+                </div>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

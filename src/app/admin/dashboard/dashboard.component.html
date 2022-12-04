@@ -1,0 +1,30 @@
+
+    <div class="container py-5 h-100">
+      <h1 class="text-center">Profils</h1>
+      <table class="table">
+        <thead>
+          <tr>
+                      <th>Nom</th>
+            <th>email</th>
+            <th>Linked In</th>
+            <th>CV</th>
+            <th>Répondre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cond of condidats">
+          
+            <td>{{cond.nom}}</td>
+            <td>{{cond.email}}</td>
+            <td> <a href= {{cond.linkedIn}}> Voir LinedIn {{cond.nom}}  </a> </td>
+            <td><a href="#">{{cond.file}}</a></td>
+            <td><button class="btn btn-success " style="margin: 15px;" (click)="Accepter(cond)">Accepter</button>
+              <button class="btn btn-danger " (click)="refuser(cond)">refuser</button></td>
+            
+          </tr>
+        </tbody>
+      </table> <div class="col-md-12 text-center">
+      <button class=" btn btn-info " (click)="filtrer()">Filtrer</button>
+      <button class=" btn btn-info " (click)="annuler()">Annuler filtration</button>
+    </div>
+    </div>

@@ -1,0 +1,81 @@
+<section class="h-100 bg-dark">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card card-registration my-4">
+          <div class="row g-0">
+            <div class="col-xl-6 d-none d-xl-block">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                alt="Sample photo" class="img-fluid"
+                style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+            </div>
+            <div class="col-xl-6">
+              <div class="card-body p-md-5 text-black">
+                <h3 class="mb-5 text-uppercase">S'identififer</h3>
+
+                <form (ngSubmit)="submit()" [formGroup]="form">
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <label class="form-label" for="email">Address mail</label>
+                        <input type="email" name="email" formControlName="email" class="form-control form-control-lg"
+                          [ngClass]="{'is-invalid' : submitted && f.email.errors}" />
+                        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                          <div *ngIf="f.email.errors.required">
+                            L'email est obligatoire
+                          </div>
+                          <div *ngIf="f.email.errors.email">
+                            L'email n'est pas validé
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <label class="form-label" for="password">Mot de Passe</label>
+                        <input type="password" name="password" formControlName="password" class="form-control form-control-lg"
+                          [ngClass]="{'is-invalid' : submitted && f.password.errors}" />
+                        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                          <div *ngIf="f.password.errors.required">
+                            le Mot de passe est obligatoire
+                          </div>
+                          <div *ngIf="f.password.errors.minLength">
+                            Il faut minimum 6 caracteres
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-end pt-3">
+                    <button type="submit" class="btn btn-warning btn-lg ms-2">Connexion</button>
+                  </div>
+
+                  <div class="form-group">
+                    <div
+                      class="alert alert-danger"
+                      role="alert"
+                      *ngIf="f.submitted && isLoginFailed"
+                    >
+                      Login failed: {{ errorMessage }}
+                    </div>
+                  </div>
+
+                </form>
+
+                <div class="alert alert-success" *ngIf="isLoggedIn">
+                  Logged in as {{ username }}.
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
