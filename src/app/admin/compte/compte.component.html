@@ -15,12 +15,7 @@
                         <thead>
                         </thead>
                         <tbody>
-                            <tr>
-                                <th scope="col">
-                                    <img src="../assets/profielfoto.png" width="60"/>
-                                </th>
-                                <td></td>
-                            </tr>
+                           
                             <tr>
                                 <th scope="col">Nom société</th>
                                 <td>{{compte.nom}}</td>
@@ -46,7 +41,7 @@
                                 <td>{{compte.password}}</td>
                             </tr>
 
-                           <button class="btn btn-warning"><a [routerLink]="['/modifier',idrh]" > Détail</a></button> 
+                           <button class="btn btn-warning" [routerLink]="['/modifier',idrh]" >Modifier</button> 
 
                         </tbody>                
                 </table>

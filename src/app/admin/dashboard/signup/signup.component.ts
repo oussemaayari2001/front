@@ -9,6 +9,8 @@ import { AuthentificationService } from 'src/app/service/auth-service.service';
 })
 export class SignupComponent implements OnInit {
   isSuccessful=false
+  errorMessage: any;
+  isSignupFailed: boolean;
   constructor(private authService: AuthentificationService, private tokenStorage: TokenStorageService,private fb:FormBuilder) { }
   form:FormGroup=this.fb.group({
 
@@ -24,10 +26,21 @@ export class SignupComponent implements OnInit {
 submit(){
   this.authService.register(this.form.value).subscribe((data)=>{
     console.log(data);
-   ;
-    this.isSuccessful=true
+    if (data.err) {
+      this.errorMessage = data.err;
+      this.isSignupFailed = true;
+    } else {
+      this.isSuccessful=true
+    }
     
-  })
+  },
+
+    
+    err => {
+   
+    }
+    
+  )
 
 }
   ngOnInit(): void {

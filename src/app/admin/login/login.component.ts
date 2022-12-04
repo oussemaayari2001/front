@@ -54,12 +54,15 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
       
-        setTimeout(() => {
+        
             if (this.isLoggedIn) {
-          this.router.navigate(['/annonce'])
-        }
+              
+          this.router.navigate(['/annonce']).then(()=>{
+            this.reloadPage()
+          })
           
-        }, 0);
+        }
+       
         
       },
       err => {

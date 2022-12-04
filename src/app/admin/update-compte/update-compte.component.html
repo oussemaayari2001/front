@@ -55,7 +55,7 @@
           </form>
         </div>
         <div class="card-footer">
-          <button class="btn btn--radius-2 btn--blue-2" (click)="modifierCompte()">Enregistrer</button>
+          <button class="btn btn--radius-2 btn--blue-2" (click)="modifierCompte()" [routerLink]="['/compte',idRh]">Enregistrer</button>
         </div>
         <div class="card-footer">
           <button class="btn btn--radius-2 btn--blue-2" (click)="supprimerCompte()">Désactiver mon compte</button>

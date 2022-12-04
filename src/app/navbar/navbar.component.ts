@@ -23,7 +23,7 @@ username:any
     console.log(this.tokenstorage.getUser()._id);
     this.idrh=this.tokenstorage.getUser()._id;
     this.username=this.tokenstorage.getUser().nom
-    this.token = localStorage.getItem('token');
+    this.token = sessionStorage.getItem('auth-token');
     this.userData = jwt_decode(this.token);
     this.email = this.userData.email;
     console.log(this.token);
@@ -36,7 +36,11 @@ username:any
   logout(){
     window.sessionStorage.clear()
     this.authservice.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login']).then(()=>{
+      this.reloadPage()
+    });
   }
-
+  reloadPage(): void {
+    window.location.reload();
+  }
 }

@@ -13,10 +13,13 @@ export class GestionAnnonceComponent implements OnInit {
  annonces = []
 tabIdAnnonces=[]
 idRh:any
+nom:any
+
   constructor(private RhService:RhService,private token:TokenStorageService,private AnnonceService:AnnonceService,private activatedRoute:ActivatedRoute) { }
 
   ngOnInit(): void {
-
+// window.location.reload()
+this.nom=this.token.getUser().nom
     this.tabIdAnnonces=this.token.getUser().annonces
     console.log('Notre User',this.token.getUser());
     

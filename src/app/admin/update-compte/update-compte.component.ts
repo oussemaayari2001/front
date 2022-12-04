@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AnnonceService } from 'src/app/service/annonce.service';
 import { CandidatService } from 'src/app/service/candidat.service';
 import { RhService } from 'src/app/service/rh.service';
@@ -18,7 +19,7 @@ idRh:any
 tabAnnonce=[]
 tabCandidat=[]
 
-  constructor(private candidatService:CandidatService ,private f:FormBuilder,private compteService:RhService,private token:TokenStorageService,private annonceSrevice:AnnonceService) { }
+  constructor(private router:Router,private candidatService:CandidatService ,private f:FormBuilder,private compteService:RhService,private token:TokenStorageService,private annonceSrevice:AnnonceService) { }
 
   ngOnInit(): void {
     this.idRh=this.token.getUser()._id;
@@ -53,7 +54,14 @@ tabCandidat=[]
   }
 
   modifierCompte(){
-    this.compteService.updateRh(this.idRh,this.compte).subscribe()
+    this.compteService.updateRh(this.idRh,this.compte).subscribe((n)=>{
+      console.log(n);
+      this.token.saveUser(n)
+      this.router.navigate(['/compte',this.idRh]).then(()=>{
+        
+        window.location.reload()
+      })
+    })
   }
 
   supprimerCompte(){
