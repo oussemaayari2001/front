@@ -31,8 +31,8 @@
             <td>{{cond.email}}</td>
             <td> <a href= {{cond.linkedIn}}> Voir LinedIn {{cond.nom}}  </a> </td>
             <td><a href="#">{{cond.file}}</a></td>
-            <td><button class="btn btn-success " style="margin: 15px;" (click)="Accepter(cond)">Accepter</button>
-              <button class="btn btn-danger " (click)="refuser(cond)">refuser</button></td>
+            <td><button class="btn btn-success " style="margin: 15px;" (click)="Accepter({'expediteur':rhmail,'destinataire':cond.email})">Accepter</button>
+              <button class="btn btn-danger " (click)="refuser({'expediteur':rhmail,'destinataire':cond.email},cond._id)">refuser</button></td>
             
           </tr>
         </tbody>
